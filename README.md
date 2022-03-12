@@ -14,6 +14,7 @@ Inspired from Make a Tetris-style Puzzler in Unity course on Udemy by Wilmer Lin
 - [ ] Limitation of placing position
 - [ ] Clear filled rows and colums
 - [ ] Lose condition
+- [ ] Score system
 ### Others
 - [ ] UI
 - [ ] SFX
