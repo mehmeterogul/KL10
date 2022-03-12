@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4071588361369270650}
   - component: {fileID: 6652269406711931096}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Child (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1167537926860306377}
   - component: {fileID: 88498731907582622}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Child (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 288526719615979489}
   - component: {fileID: 954276498450207129}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Child (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3909820037564024536}
   - component: {fileID: 181688393814082627}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Child (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2608525497084307736}
   - component: {fileID: 2471015525163637006}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Child (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5998298724694074597}
   - component: {fileID: 5693103551573408241}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Child (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4924484524097155679}
   - component: {fileID: 4265563305350776374}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Child (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4543595085239338955}
   - component: {fileID: 3764967844881358538}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Child
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1393650134606693983}
   - component: {fileID: 6555071714522896482}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Child (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

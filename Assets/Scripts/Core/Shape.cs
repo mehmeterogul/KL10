@@ -30,4 +30,9 @@ public class Shape : MonoBehaviour
     {
         transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1f, 1f, 1f), 1f);
     }
+
+    public void DestroyCollider()
+    {
+        Destroy(GetComponent<BoxCollider2D>());
+    }
 }

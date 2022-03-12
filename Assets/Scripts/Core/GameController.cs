@@ -67,9 +67,23 @@ public class GameController : MonoBehaviour
             {
                 if (!rayHit) return;
 
-                selectedShape.SetScaleDown();
-                selectedShape.transform.position = selectedShape.GetSpawnPosition();
+                DropShapeOnBoard();
+                // CHECK DROP POSITIN OF SHAPE IS VALID
+                // if drop position is valid
+                selectedShape.DestroyCollider();
+                spawner.DecreaseShapeCount();
+
+                if(IsShapeCountZero())
+                {
+                    spawner.SpawnShapes();
+                }
+
                 selectedShape = null;
+
+                    // if drop position is invalid
+                //selectedShape.SetScaleDown();
+                //selectedShape.transform.position = selectedShape.GetSpawnPosition();
+                //selectedShape = null;
             }
         }
     }
@@ -83,5 +97,19 @@ public class GameController : MonoBehaviour
                     mainCamera.ScreenToWorldPoint(Input.mousePosition).y,
                     selectedShape.transform.position.z
                     );
+    }
+
+    void DropShapeOnBoard()
+    {
+        selectedShape.transform.position = Vector3Int.RoundToInt(new Vector3(
+                    mainCamera.ScreenToWorldPoint(Input.mousePosition).x,
+                    mainCamera.ScreenToWorldPoint(Input.mousePosition).y,
+                    selectedShape.transform.position.z
+                    ));
+    }
+
+    bool IsShapeCountZero()
+    {
+        return (spawner.GetShapeCount() == 0);
     }
 }
