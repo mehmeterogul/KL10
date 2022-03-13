@@ -68,22 +68,32 @@ public class GameController : MonoBehaviour
                 if (!rayHit) return;
 
                 DropShapeOnBoard();
-                // CHECK DROP POSITIN OF SHAPE IS VALID
-                // if drop position is valid
-                selectedShape.DestroyCollider();
-                spawner.DecreaseShapeCount();
 
-                if(IsShapeCountZero())
+                // CHECK DROP POSITIN OF SHAPE IS VALID
+                if (gameBoard.IsValidPosition(selectedShape))
                 {
-                    spawner.SpawnShapes();
+                    // if drop position is valid
+                    selectedShape.SetShapeParent(gameBoard.transform);
+                    selectedShape.DestroyCollider();
+
+                    gameBoard.StoreShapeInGrid(selectedShape);
+
+                    spawner.DecreaseShapeCount();
+
+                    // Check shape count for spawn condition
+                    if (IsShapeCountZero())
+                    {
+                        spawner.SpawnShapes();
+                    }
+                }
+                else
+                {
+                    // if drop position is invalid
+                    selectedShape.SetScaleDown();
+                    selectedShape.transform.position = selectedShape.GetSpawnPosition();
                 }
 
                 selectedShape = null;
-
-                    // if drop position is invalid
-                //selectedShape.SetScaleDown();
-                //selectedShape.transform.position = selectedShape.GetSpawnPosition();
-                //selectedShape = null;
             }
         }
     }
@@ -92,19 +102,17 @@ public class GameController : MonoBehaviour
     {
         if (!selectedShape) return;
 
-        selectedShape.transform.position = new Vector3(
+        selectedShape.transform.position = new Vector2(
                     mainCamera.ScreenToWorldPoint(Input.mousePosition).x,
-                    mainCamera.ScreenToWorldPoint(Input.mousePosition).y,
-                    selectedShape.transform.position.z
+                    mainCamera.ScreenToWorldPoint(Input.mousePosition).y
                     );
     }
 
     void DropShapeOnBoard()
     {
-        selectedShape.transform.position = Vector3Int.RoundToInt(new Vector3(
+        selectedShape.transform.position = Vector3Int.RoundToInt(new Vector2(
                     mainCamera.ScreenToWorldPoint(Input.mousePosition).x,
-                    mainCamera.ScreenToWorldPoint(Input.mousePosition).y,
-                    selectedShape.transform.position.z
+                    mainCamera.ScreenToWorldPoint(Input.mousePosition).y
                     ));
     }
 

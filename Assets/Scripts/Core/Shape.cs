@@ -23,7 +23,7 @@ public class Shape : MonoBehaviour
 
     public void SetScaleDown()
     {
-        transform.localScale = new Vector3(0.7f, 0.7f, 1f);
+        transform.localScale = new Vector3(0.55f, 0.55f, 1f);
     }
 
     public void SetScaleUp()
