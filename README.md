@@ -9,7 +9,7 @@ Inspired from Make a Tetris-style Puzzler in Unity course on Udemy by Wilmer Lin
 - [x] Create shape spawner
 - [x] Player Input: Shape selection
 - [x] Player Input: Placing shapes on proper position
-- [ ] Limitation of placing position
+- [x] Limitation of placing position
 - [ ] Clear filled rows and colums
 - [ ] Losing condition
 - [ ] Score system
