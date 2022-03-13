@@ -66,6 +66,7 @@ public class GameController : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 if (!rayHit) return;
+                if (!selectedShape) return;
 
                 DropShapeOnBoard();
 
@@ -111,6 +112,8 @@ public class GameController : MonoBehaviour
 
     void DropShapeOnBoard()
     {
+        if (!selectedShape) return;
+
         selectedShape.transform.position = Vector3Int.RoundToInt(new Vector2(
                     mainCamera.ScreenToWorldPoint(Input.mousePosition).x,
                     mainCamera.ScreenToWorldPoint(Input.mousePosition).y

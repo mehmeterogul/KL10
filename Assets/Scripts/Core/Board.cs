@@ -39,6 +39,8 @@ public class Board : MonoBehaviour
 
     public bool IsValidPosition(Shape shape)
     {
+        if (shape == null) return false;
+
         foreach(Transform child in shape.transform)
         {
             Vector2 pos = Vector2Int.RoundToInt(child.position);
