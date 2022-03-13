@@ -13,7 +13,7 @@ Inspired from Make a Tetris-style Puzzler in Unity course on Udemy by Wilmer Lin
 - [x] Player Input: Placing shapes on proper position
 - [ ] Limitation of placing position
 - [ ] Clear filled rows and colums
-- [ ] Lose condition
+- [ ] Losing condition
 - [ ] Score system
 ### Others
 - [ ] UI
