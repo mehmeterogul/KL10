@@ -2,8 +2,6 @@
 My 1010! game clone project that I created with Unity.<br>
 Inspired from Make a Tetris-style Puzzler in Unity course on Udemy by Wilmer Lin.
 
-<br>
-
 ## 📝To-Do List
 ### Core game mechanics
 - [x] Fill the game board with empty cells using scripting
