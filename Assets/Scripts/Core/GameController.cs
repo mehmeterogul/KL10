@@ -77,6 +77,7 @@ public class GameController : MonoBehaviour
                     selectedShape.DestroyCollider();
 
                     gameBoard.StoreShapeInGrid(selectedShape);
+                    gameBoard.ClearBoard();
 
                     spawner.DecreaseShapeCount();
 

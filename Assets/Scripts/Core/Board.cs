@@ -78,4 +78,75 @@ public class Board : MonoBehaviour
             grid[(int)pos.x, (int)pos.y] = child;
         }
     }
+
+    public void ClearBoard()
+    {
+        for (int y = 0; y < boardHeight; y++)
+        {
+            if(IsRowComplete(y))
+            {
+                ClearRow(y);
+            }
+        }
+
+        for (int x = 0; x < boardWidth; x++)
+        {
+            if (IsColumnComplete(x))
+            {
+                ClearColumn(x);
+            }
+        }
+    }
+
+    bool IsRowComplete(int y)
+    {
+        for (int x = 0; x < boardWidth; x++)
+        {
+            if(grid[x, y] == null)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    bool IsColumnComplete(int x)
+    {
+        for (int y = 0; y < boardHeight; y++)
+        {
+            if (grid[x, y] == null)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    void ClearRow(int y)
+    {
+        for (int x = 0; x < boardWidth; x++)
+        {
+            if(grid[x, y] != null)
+            {
+                Destroy(grid[x, y].gameObject);
+            }
+
+            grid[x, y] = null;
+        }
+    }
+
+    void ClearColumn(int x)
+    {
+        for (int y = 0; y < boardHeight; y++)
+        {
+            if (grid[x, y] != null)
+            {
+                Destroy(grid[x, y].gameObject);
+            }
+
+            grid[x, y] = null;
+        }
+    }
 }
