@@ -114,11 +114,7 @@ public class GameController : MonoBehaviour
     {
         if (!selectedShape) return;
 
-<<<<<<< Updated upstream
         selectedShape.transform.position = Vector3Int.RoundToInt(new Vector2(
-=======
-        selectedShape.transform.position = Vector3Int.RoundToInt(new Vector3(
->>>>>>> Stashed changes
                     mainCamera.ScreenToWorldPoint(Input.mousePosition).x,
                     mainCamera.ScreenToWorldPoint(Input.mousePosition).y
                     ));
