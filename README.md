@@ -16,7 +16,7 @@ Inspired from Make a Tetris-style Puzzler in Unity course on Udemy by Wilmer Lin
 - [x] Limitation of placing position
 - [x] Clear filled rows and colums
 - [ ] BUG: The functions that will clear rows and columns has working seperately. So thats why if we place a shape that should clear rows and colums at the same time, that doesn't work. It's only clear rows or columns at the same time.
-- [ ] Losing condition
+- [ ] The losing condition
 - [ ] Score system
 ### Others
 - [ ] UI
