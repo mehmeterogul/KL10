@@ -83,11 +83,15 @@ public class Board : MonoBehaviour
 
     public void ClearBoard()
     {
+        List<int> rowIndex = new List<int>();
+        List<int> columnIndex = new List<int>();
+
         for (int y = 0; y < boardHeight; y++)
         {
             if(IsRowComplete(y))
             {
                 ClearRow(y);
+                rowIndex.Add(y); 
             }
         }
 
@@ -96,7 +100,18 @@ public class Board : MonoBehaviour
             if (IsColumnComplete(x))
             {
                 ClearColumn(x);
+                columnIndex.Add(x);
             }
+        }
+
+        if(rowIndex.Count > 0)
+        {
+            ClearRowStack(rowIndex);
+        }
+        
+        if(columnIndex.Count > 0)
+        {
+            ClearColumnStack(columnIndex);
         }
     }
 
@@ -130,12 +145,10 @@ public class Board : MonoBehaviour
     {
         for (int x = 0; x < boardWidth; x++)
         {
-            if(grid[x, y] != null)
+            if (grid[x, y] != null)
             {
                 Destroy(grid[x, y].gameObject);
             }
-
-            grid[x, y] = null;
         }
     }
 
@@ -147,8 +160,28 @@ public class Board : MonoBehaviour
             {
                 Destroy(grid[x, y].gameObject);
             }
+        }
+    }
 
-            grid[x, y] = null;
+    void ClearRowStack(List<int> rows)
+    {
+        foreach(int rowIndex in rows)
+        {
+            for (int x = 0; x < boardWidth; x++)
+            {
+                grid[x, rowIndex] = null;
+            }
+        }
+    }
+
+    void ClearColumnStack(List<int> columns)
+    {
+        foreach (int columnIndex in columns)
+        {
+            for (int y = 0; y < boardWidth; y++)
+            {
+                grid[columnIndex, y] = null;
+            }
         }
     }
 }
