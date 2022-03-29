@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
 
     Shape selectedShape;
 
+    bool isGameOver = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +77,7 @@ public class GameController : MonoBehaviour
                 {
                     // if drop position is valid
                     selectedShape.SetShapeParent(gameBoard.transform);
+                    selectedShape.SetTagPlaced();
                     selectedShape.DestroyCollider();
 
                     gameBoard.StoreShapeInGrid(selectedShape);
@@ -86,6 +89,18 @@ public class GameController : MonoBehaviour
                     if (IsShapeCountZero())
                     {
                         spawner.SpawnShapes();
+                    }
+
+                    // do the remaining shapes fit on the board?
+                    if (!CheckShapesFitArea())
+                    {
+                        Debug.Log("Þekiller sýðmýyor.");
+                        Debug.Log("game over");
+                        isGameOver = true;
+                    }
+                    else
+                    {
+                        Debug.Log("Þekiller sýðýyor.");
                     }
                 }
                 else
@@ -123,5 +138,25 @@ public class GameController : MonoBehaviour
     bool IsShapeCountZero()
     {
         return (spawner.GetShapeCount() == 0);
+    }
+
+    bool CheckShapesFitArea()
+    {
+        GameObject[] shapes = GameObject.FindGameObjectsWithTag("NotPlaced");
+
+        if (shapes.Length > 0)
+        {
+            foreach (GameObject shape in shapes)
+            {
+                Debug.Log(shape.transform.name);
+
+                if (!gameBoard.CheckShapeIsFitting(shape.GetComponent<Shape>()))
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }

@@ -66,6 +66,8 @@ public class Board : MonoBehaviour
 
     bool IsOccupied(int x, int y)
     {
+        if (x < 0 || x >= boardWidth || y < 0 || y >= boardHeight) return true;
+
         return (grid[x, y] != null);
     }
 
@@ -184,4 +186,47 @@ public class Board : MonoBehaviour
             }
         }
     }
+
+    public bool CheckShapeIsFitting(Shape shape)
+    {
+        Vector2 firstChildPosition = Vector2Int.RoundToInt(shape.transform.GetChild(0).position);
+
+        for (int y = boardHeight - 1; y >= 0; y--)
+        {
+            for (int x = 0; x < boardWidth; x++)
+            {
+                if(grid[x, y] == null)
+                {
+                    Debug.Log("Empty cell. Cell(" + x + ", " + y + ")");
+
+                    Vector2 shapePlacePosition = new Vector2(x, y);
+
+                    if(CheckShapeWithSpecificVector(shape, shapePlacePosition, firstChildPosition))
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    bool CheckShapeWithSpecificVector(Shape shape, Vector2 shapePlacePosition, Vector2 firstChildPosition)
+    {
+        foreach (Transform child in shape.transform)
+        {
+            Vector2 childPos = Vector2Int.RoundToInt(child.position);
+
+            Vector2 roundedPos = Vector2Int.RoundToInt(shapePlacePosition + childPos - firstChildPosition);
+
+            if (IsOccupied((int)roundedPos.x, (int)roundedPos.y) || !IsWithinBoard((int)roundedPos.x, (int)roundedPos.y))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
 }

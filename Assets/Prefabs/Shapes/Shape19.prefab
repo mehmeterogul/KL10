@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: -2650267517178981581}
   m_Layer: 6
   m_Name: Shape19
-  m_TagString: Untagged
+  m_TagString: NotPlaced
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,8 +111,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8658132244281743837}
   - {fileID: 9198877965791111020}
+  - {fileID: 8658132244281743837}
   - {fileID: 8129031367003357807}
   - {fileID: 3435864795196271209}
   m_Father: {fileID: 0}
@@ -185,7 +185,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7041950426465625571}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8292833913790382300
 SpriteRenderer:
@@ -267,7 +267,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7041950426465625571}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1979421134476639950
 SpriteRenderer:

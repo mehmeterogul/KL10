@@ -35,4 +35,9 @@ public class Shape : MonoBehaviour
     {
         Destroy(GetComponent<BoxCollider2D>());
     }
+
+    public void SetTagPlaced()
+    {
+        gameObject.tag = "Placed";
+    }
 }
