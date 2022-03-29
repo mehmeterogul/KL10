@@ -1,6 +1,6 @@
 # KL10
-My 1010!(block puzzle) game clone project that I created with Unity.<br>
-Inspired from Make a Tetris-style Puzzler in Unity course on Udemy by Wilmer Lin.
+My 1010!(block puzzle) game clone project that I made with Unity.<br>
+Inspired from "Make a Tetris-style Puzzler in Unity" course on Udemy by Wilmer Lin.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/55895206/158063210-defc28f8-c7dd-447d-a73f-f9c9dda15fd8.gif" height="350px">
